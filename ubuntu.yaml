@@ -1,7 +1,6 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  creationTimestamp: null
   labels:
     app: ubuntu
   name: ubuntu
@@ -10,15 +9,14 @@ spec:
   selector:
     matchLabels:
       app: ubuntu
-  strategy: {}
   template:
     metadata:
-      creationTimestamp: null
       labels:
         app: ubuntu
     spec:
       containers:
       - image: ubuntu:latest
         name: ubuntu
-        resources: {}
-status: {}
+        command: [ "sleep" ]
+        args: [ "infinity" ]
+
